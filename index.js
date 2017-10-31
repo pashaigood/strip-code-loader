@@ -7,12 +7,12 @@ function StripBlockLoader(content) {
 
     var query = loaderUtils.parseQuery(this.query);
 
-    this.start_comment = query.start_comment || 'test-code';
-    this.end_comment = query.end_comment || 'end-test-code';
+    const start_comment = query.start_comment || 'test-code';
+    const end_comment = query.end_comment || 'end-test-code';
 
-    this.regexPattern = query.pattern || new RegExp("([\\t ]*\\/\\* ?" + query.start_comment + " ?\\*\\/)[\\s\\S]*?(\\/\\* ?" + query.end_comment + " ?\\*\\/[\\t ]*\\n?)", "g");
+    const regexPattern = query.pattern || new RegExp("([\\t ]*\\/\\* ?" + start_comment + " ?\\*\\/)[\\s\\S]*?(\\/\\* ?" + end_comment + " ?\\*\\/[\\t ]*\\n?)", "g");
 
-    content = content.replace(this.regexPattern, '');
+    content = content.replace(regexPattern, '');
 
     if (this.cacheable) {
         this.cacheable(true);
