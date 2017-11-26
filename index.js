@@ -4,8 +4,7 @@
 var loaderUtils = require('loader-utils');
 
 function StripBlockLoader(content) {
-
-    var query = loaderUtils.parseQuery(this.query);
+    var query = loaderUtils.getOptions(this) || {};
 
     const start_comment = query.start_comment || 'test-code';
     const end_comment = query.end_comment || 'end-test-code';

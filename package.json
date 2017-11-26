@@ -9,7 +9,7 @@
   "author": "pashaigood",
   "license": "ISC",
   "dependencies": {
-    "loader-utils": "^0.2.13"
+    "loader-utils": "^1.1.0"
   },
   "repository": {
     "type": "git",
